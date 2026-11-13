@@ -1,0 +1,2899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Al Burr Fast Food & Pizza | Exclusive Gourmet Mobile Menu</title>
+  <meta name="description" content="Al Burr Fast Food & Pizza - Premium culinary menu with signature Crown Crust Pizzas, handcrafted Zingers, artisan Shawarmas & 28 value feasts. Direct WhatsApp Concierge Ordering.">
+  <meta name="theme-color" content="#07080a">
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Google Fonts: Syne (Ultra-modern luxe display) + Outfit (Sleek contemporary body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07080a;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #1e1107 0%, #0a0c10 50%, #060709 100%);
+      --surface-1: #0f1218;
+      --surface-2: #161a23;
+      --surface-3: #1f2430;
+      --surface-glass: rgba(18, 22, 30, 0.72);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-border-focus: rgba(245, 166, 35, 0.4);
+
+      /* Luxury Gold & Flame Accents */
+      --gold-100: #fff3d6;
+      --gold-300: #fbd38d;
+      --gold-400: #f6ad55;
+      --gold-500: #e5a93b;
+      --gold-gradient: linear-gradient(135deg, #ffe082 0%, #d49520 50%, #f5b041 100%);
+      
+      --fire-500: #ff4713;
+      --fire-gradient: linear-gradient(135deg, #ff6b3d 0%, #ff3b00 100%);
+      --fire-glow: rgba(255, 71, 19, 0.35);
+
+      /* WhatsApp Jewel Green */
+      --wa-green: #25D366;
+      --wa-dark: #128C7E;
+      --wa-gradient: linear-gradient(135deg, #2fe673 0%, #1aa64e 60%, #107c39 100%);
+      --wa-glow: rgba(37, 211, 102, 0.35);
+
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+
+      --shadow-luxe: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+      --shadow-glow: 0 8px 24px -6px var(--fire-glow);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 125px;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* App Shell Container */
+    .app-shell {
+      max-width: 540px;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      background: rgba(8, 9, 12, 0.95);
+      border-left: 1px solid rgba(255, 255, 255, 0.05);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 80px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Top VIP Lounge Banner */
+    .vip-top-bar {
+      background: linear-gradient(90deg, #10141d 0%, #1a1711 50%, #10141d 100%);
+      border-bottom: 1px solid rgba(229, 169, 59, 0.2);
+      padding: 9px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--gold-300);
+    }
+    .vip-top-bar .vip-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+      font-size: 10.5px;
+    }
+    .vip-top-bar .vip-dot {
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      display: inline-block;
+    }
+    .vip-phone-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(229, 169, 59, 0.12);
+      border: 1px solid rgba(229, 169, 59, 0.35);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      color: #fff;
+      cursor: pointer;
+      font-size: 11.5px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .vip-phone-trigger:hover {
+      background: rgba(229, 169, 59, 0.25);
+    }
+
+    /* Dramatic Hero Header */
+    .hero-marquee {
+      position: relative;
+      padding: 28px 20px 22px;
+      background: linear-gradient(180deg, rgba(8, 9, 12, 0.2) 0%, rgba(8, 9, 12, 0.9) 75%, var(--bg) 100%),
+                  url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+      border-bottom-left-radius: var(--radius-lg);
+      border-bottom-right-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .hero-marquee::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(255, 71, 19, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .brand-emblem-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--gold-300);
+      margin-bottom: 12px;
+    }
+
+    .brand-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+    .brand-headline span.gradient-word {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .brand-subtext {
+      color: #cbd5e1;
+      font-size: 13.5px;
+      margin-top: 8px;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .brand-subtext span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Luxury Stat Glass Dock */
+    .hero-stats-dock {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      background: var(--surface-glass);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 12px 10px;
+      margin-top: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+    .dock-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .dock-stat:not(:last-child) {
+      border-right: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .dock-label {
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+    .dock-value {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .dock-value.gold {
+      color: var(--gold-400);
+    }
+    .dock-value.green {
+      color: #34d399;
+    }
+
+    /* Hero Quick Buttons */
+    .hero-actions-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .hero-cta {
+      flex: 1;
+      padding: 11px 16px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-cta.whatsapp-primary {
+      background: var(--wa-gradient);
+      color: #ffffff;
+      box-shadow: 0 8px 24px -4px var(--wa-glow);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .hero-cta.whatsapp-primary:active {
+      transform: scale(0.97);
+    }
+    .hero-cta.call-glass {
+      background: var(--surface-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      color: #fff;
+    }
+
+    /* Sticky Search & Haute Category Bar */
+    .sticky-control-hub {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(7, 8, 10, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 12px;
+    }
+
+    .luxe-search-field {
+      margin: 0 16px 12px;
+      position: relative;
+    }
+    .luxe-search-field input {
+      width: 100%;
+      background: rgba(22, 26, 35, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-full);
+      padding: 12px 18px 12px 44px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.25s;
+    }
+    .luxe-search-field input:focus {
+      border-color: var(--gold-400);
+      background: rgba(28, 33, 45, 0.95);
+      box-shadow: 0 0 0 3px rgba(246, 173, 85, 0.18);
+    }
+    .luxe-search-field input::placeholder {
+      color: #64748b;
+    }
+    .luxe-search-field svg.ico {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      pointer-events: none;
+    }
+    .search-reset {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 18px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Runway Category Scroll Bar */
+    .category-runway {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 0 16px 12px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .category-runway::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-chip {
+      flex: 0 0 auto;
+      background: rgba(22, 26, 35, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .category-chip:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .category-chip.active {
+      background: linear-gradient(135deg, #f6ad55 0%, #d49520 100%);
+      color: #0b0c10;
+      border-color: transparent;
+      box-shadow: 0 4px 16px rgba(246, 173, 85, 0.35);
+      font-weight: 800;
+    }
+
+    /* Main Menu Content */
+    .menu-canvas {
+      padding: 16px;
+    }
+
+    /* Section Category Header */
+    .section-ribbon {
+      margin: 26px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .section-ribbon:first-of-type {
+      margin-top: 6px;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-count {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-400);
+      background: rgba(229, 169, 59, 0.1);
+      border: 1px solid rgba(229, 169, 59, 0.25);
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.5px;
+    }
+
+    /* =========================================
+       SIGNATURE DISH CARD (THE SHOWSTOPPER)
+       ========================================= */
+    .dish-card {
+      background: linear-gradient(145deg, rgba(22, 26, 36, 0.85) 0%, rgba(14, 17, 24, 0.95) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .dish-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
+    }
+    .dish-card:hover {
+      border-color: rgba(246, 173, 85, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.75), 0 0 20px -8px rgba(246, 173, 85, 0.2);
+    }
+
+    .dish-body {
+      display: flex;
+      padding: 14px;
+      gap: 14px;
+    }
+
+    .dish-text-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .dish-pill-tags {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .badge-tag {
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+    }
+    .badge-tag.gold {
+      background: rgba(229, 169, 59, 0.16);
+      color: #ffd166;
+      border: 1px solid rgba(229, 169, 59, 0.35);
+    }
+    .badge-tag.flame {
+      background: rgba(255, 71, 19, 0.16);
+      color: #ff8b66;
+      border: 1px solid rgba(255, 71, 19, 0.35);
+    }
+    .badge-tag.emerald {
+      background: rgba(16, 185, 129, 0.16);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+
+    .dish-name {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+      letter-spacing: -0.2px;
+    }
+    .dish-summary {
+      font-size: 12.5px;
+      color: #94a3b8;
+      line-height: 1.45;
+      margin-top: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Food Image Showcase */
+    .dish-visual {
+      width: 110px;
+      height: 110px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+      background: #11141c;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    }
+    .dish-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .dish-card:hover .dish-visual img {
+      transform: scale(1.08);
+    }
+
+    /* Size / Crust Selector Pills */
+    .size-tabs-rack {
+      display: flex;
+      gap: 6px;
+      padding: 0 14px 12px;
+      overflow-x: auto;
+    }
+    .size-tab-btn {
+      flex: 1;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #94a3b8;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .size-tab-btn.active {
+      background: rgba(229, 169, 59, 0.15);
+      border-color: var(--gold-400);
+      color: #ffe082;
+      font-weight: 800;
+    }
+
+    /* Bottom Action Footbar of the Card */
+    .dish-footbar {
+      background: rgba(10, 13, 18, 0.85);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .dish-price-block {
+      display: flex;
+      flex-direction: column;
+    }
+    .dish-price-prefix {
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .dish-price-digits {
+      font-size: 20px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.1;
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+    }
+    .dish-price-digits .curr {
+      font-size: 12px;
+      color: var(--gold-400);
+      font-weight: 800;
+    }
+
+    .dish-button-cluster {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* THE SIGNATURE WHATSAPP ORDER BUTTON */
+    .btn-wa-order {
+      background: var(--wa-gradient);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-full);
+      padding: 9px 15px;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 4px 16px -2px var(--wa-glow);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+    .btn-wa-order:hover {
+      box-shadow: 0 6px 20px 0 var(--wa-glow);
+      filter: brightness(1.05);
+    }
+    .btn-wa-order:active {
+      transform: scale(0.96);
+    }
+    .btn-wa-order svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* Add to Cart Icon Button */
+    .btn-cart-stepper {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-cart-stepper:hover {
+      background: var(--fire-500);
+      border-color: var(--fire-500);
+      box-shadow: 0 4px 12px var(--fire-glow);
+    }
+    .btn-cart-stepper:active {
+      transform: scale(0.92);
+    }
+
+    /* =========================================
+       FLOATING CONCIERGE CART BAR
+       ========================================= */
+    .floating-concierge {
+      position: fixed;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 24px);
+      max-width: 516px;
+      background: rgba(14, 18, 25, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(246, 173, 85, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 11px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85), 0 0 1px 1px rgba(255, 255, 255, 0.1);
+      z-index: 100;
+    }
+
+    .concierge-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+    .cart-bubble-hub {
+      position: relative;
+      background: linear-gradient(135deg, #1f2533 0%, #151922 100%);
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .cart-bubble-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: var(--fire-500);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px var(--fire-glow);
+      border: 2px solid #0f1218;
+    }
+
+    .concierge-details {
+      display: flex;
+      flex-direction: column;
+    }
+    .concierge-sub {
+      font-size: 11px;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .concierge-sum {
+      font-size: 18px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.2px;
+    }
+    .concierge-sum span.rs {
+      color: var(--gold-400);
+      font-size: 13px;
+      margin-right: 2px;
+    }
+
+    .btn-concierge-checkout {
+      background: var(--wa-gradient);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 18px var(--wa-glow);
+      transition: all 0.2s;
+    }
+    .btn-concierge-checkout:active {
+      transform: scale(0.96);
+    }
+
+    /* =========================================
+       CART DRAWER MODAL
+       ========================================= */
+    .drawer-scrim {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(8px);
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .drawer-scrim.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer-panel {
+      width: 100%;
+      max-width: 540px;
+      background: #0f131a;
+      border-top-left-radius: var(--radius-lg);
+      border-top-right-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: none;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(100%);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .drawer-scrim.open .drawer-panel {
+      transform: translateY(0);
+    }
+
+    .drawer-top {
+      padding: 18px 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .drawer-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .drawer-close {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .drawer-items-list {
+      padding: 16px 22px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .cart-entry {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .cart-entry-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .cart-entry-variant {
+      font-size: 11.5px;
+      color: var(--gold-400);
+      font-weight: 600;
+    }
+    .cart-entry-price {
+      font-size: 12.5px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .drawer-stepper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-full);
+      padding: 4px 10px;
+    }
+    .stepper-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stepper-num {
+      font-size: 13.5px;
+      font-weight: 800;
+      min-width: 16px;
+      text-align: center;
+    }
+
+    .drawer-bottom {
+      padding: 18px 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #0c0f16;
+    }
+    .input-address-field {
+      margin-bottom: 14px;
+    }
+    .input-address-field label {
+      display: block;
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .input-address-field input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 11px 16px;
+      color: #fff;
+      font-size: 13.5px;
+      outline: none;
+    }
+    .input-address-field input:focus {
+      border-color: var(--wa-green);
+    }
+
+    .ledger-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13.5px;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+    .ledger-row.grand-total {
+      font-size: 19px;
+      font-weight: 900;
+      color: #fff;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-dispatch-wa {
+      width: 100%;
+      background: var(--wa-gradient);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px var(--wa-glow);
+    }
+
+    /* Modal for Changing WhatsApp Number */
+    .luxe-dialog {
+      background: #11151e;
+      border: 1px solid rgba(229, 169, 59, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      width: calc(100% - 32px);
+      max-width: 440px;
+      margin: auto;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Toast Notification */
+    .toast-luxe {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-90px);
+      background: linear-gradient(135deg, #18202d 0%, #10151f 100%);
+      color: #fff;
+      border: 1px solid rgba(246, 173, 85, 0.4);
+      border-radius: var(--radius-full);
+      padding: 10px 22px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.6);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      pointer-events: none;
+    }
+    .toast-luxe.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .empty-state-card {
+      text-align: center;
+      padding: 48px 20px;
+      display: none;
+    }
+    .empty-state-card.show {
+      display: block;
+    }
+
+    /* Footer */
+    .luxe-footer {
+      padding: 34px 20px 40px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #64748b;
+      font-size: 12px;
+    }
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.3px;
+      margin-bottom: 4px;
+    }
+    .footer-pills-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 14px 0 16px;
+      flex-wrap: wrap;
+    }
+    .footer-capsule {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    /* Brand Logo Emblem */
+    .brand-crest-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .brand-paddle-logo-wrap {
+      position: relative;
+      width: 145px;
+      height: 145px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 35px rgba(246, 173, 85, 0.55));
+    }
+    .brand-paddle-logo-wrap:hover {
+      transform: scale(1.06) rotate(-1deg);
+      filter: drop-shadow(0 16px 35px rgba(0, 0, 0, 0.98)) drop-shadow(0 0 50px rgba(255, 77, 0, 0.7));
+    }
+    .brand-paddle-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- Top VIP Lounge Admin Bar -->
+    <div class="vip-top-bar">
+      <div class="vip-tag">
+        <img src="logo.png" alt="Al Burr Logo" style="width:24px; height:24px; object-fit:contain; filter:drop-shadow(0 2px 6px rgba(245,166,35,0.5));">
+        <span class="vip-dot"></span>
+        <span>Kitchen Live • Express Dispatch</span>
+      </div>
+      <div class="vip-phone-trigger" onclick="openNumberModal()" title="Click to set your restaurant WhatsApp number">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <span id="currentNumberText">+92 300 1234567</span>
+      </div>
+    </div>
+
+    <!-- Dramatic Marquee Hero -->
+    <header class="hero-marquee">
+      <div class="brand-crest-wrapper">
+        <div class="brand-paddle-logo-wrap">
+          <img src="logo.png" alt="Al Burr Fast Food & Pizza" class="brand-paddle-logo">
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <div class="brand-emblem-badge">★ ESTD. AL BURR FAST FOOD & PIZZA ★</div>
+        <h1 class="brand-headline">
+          AL BURR <br>
+          <span class="gradient-word">FAST FOOD</span> & PIZZA
+        </h1>
+
+        <p class="brand-subtext" style="justify-content:center;">
+          <span>🍕 Crown Crust Pizzas</span> • 
+          <span>🍔 Gourmet Zingers</span> • 
+          <span>🌯 Lebanese Shawarma</span> • 
+          <span>🍝 Baked Pastas</span>
+        </p>
+      </div>
+
+      <div class="hero-stats-dock">
+        <div class="dock-stat">
+          <span class="dock-label">Delivery</span>
+          <span class="dock-value green">⚡ 30-45m</span>
+        </div>
+        <div class="dock-stat">
+          <span class="dock-label">Menu Scale</span>
+          <span class="dock-value gold">28 Deals</span>
+        </div>
+        <div class="dock-stat">
+          <span class="dock-label">Customer Rating</span>
+          <span class="dock-value gold">⭐ 4.9 (1.2k+)</span>
+        </div>
+      </div>
+
+      <div class="hero-actions-row">
+        <a id="directWaChatBtn" href="#" target="_blank" class="hero-cta whatsapp-primary">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Direct WhatsApp Order
+        </a>
+        <a id="directCallBtn" href="tel:+923001234567" class="hero-cta call-glass">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Restaurant
+        </a>
+      </div>
+    </header>
+
+    <!-- Sticky Navigation & Search Hub -->
+    <div class="sticky-control-hub">
+      <div class="luxe-search-field">
+        <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="menuSearchInput" placeholder="Search pizza, zinger, deal 14, pasta..." autocomplete="off">
+        <button class="search-reset" id="searchResetBtn">&times;</button>
+      </div>
+
+      <!-- Runway Category Scroller -->
+      <div class="category-runway" id="catSlider">
+        <button class="category-chip active" data-cat="all">🔥 All Menu</button>
+        <button class="category-chip" data-cat="deals">🎉 28 Mega Deals</button>
+        <button class="category-chip" data-cat="crown-pizza">👑 Crown Crust & Specials</button>
+        <button class="category-chip" data-cat="stuffer-pizza">🧀 Stuffer & Peri Peri</button>
+        <button class="category-chip" data-cat="burgers">🍔 Burgers & Zingers</button>
+        <button class="category-chip" data-cat="sandwiches">🥪 Sandwiches</button>
+        <button class="category-chip" data-cat="shawarma">🌯 Shawarma Rolls</button>
+        <button class="category-chip" data-cat="paratha-rolls">🌯 Paratha Rolls</button>
+        <button class="category-chip" data-cat="pasta-rolls">🍝 Pastas & Rolls</button>
+        <button class="category-chip" data-cat="wings-chicken">🍗 Wings & Broast</button>
+        <button class="category-chip" data-cat="doner-platters">🥙 Doner & Platters</button>
+        <button class="category-chip" data-cat="fries">🍟 Pizza Fries & Sides</button>
+      </div>
+    </div>
+
+    <!-- Main Dishes Canvas -->
+    <main class="menu-canvas" id="menuItemsContainer">
+      <!-- Injected by JavaScript -->
+    </main>
+
+    <!-- Empty Search State -->
+    <div class="empty-state-card" id="emptyStateBox">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <h3 style="color:#fff; margin-top:10px; font-family:'Syne',sans-serif;">No Dishes Found</h3>
+      <p style="color:#94a3b8; font-size:13px; margin-top:4px;">Try searching for "Deal 1", "Zinger", "Shawarma", "Pizza" or clear the search.</p>
+    </div>
+
+    <!-- Signature Footer -->
+    <footer class="luxe-footer">
+      <div style="display:flex; justify-content:center; margin-bottom:14px;">
+        <div style="width:85px; height:85px; filter:drop-shadow(0 8px 20px rgba(0,0,0,0.85)) drop-shadow(0 0 25px rgba(229,169,59,0.5));">
+          <img src="logo.png" alt="Al Burr Logo" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+      </div>
+      <div class="footer-brand">AL BURR FAST FOOD & PIZZA</div>
+      <p style="color:#94a3b8; font-size:12px; margin-bottom:12px;">Premium Culinary Craftsmanship • Quality Ingredients Only</p>
+
+      <div class="footer-pills-row">
+        <span class="footer-capsule">🛵 Express Delivery</span>
+        <span class="footer-capsule">💵 Cash on Delivery</span>
+        <span class="footer-capsule">🕒 12:00 PM – 02:00 AM</span>
+      </div>
+
+      <p style="margin-top: 14px; color: #64748b; font-size: 11px;">
+        Tap <strong>"Order on WhatsApp"</strong> on any item to place your order directly.
+      </p>
+    </footer>
+
+  </div> <!-- /app-shell -->
+
+  <!-- Floating Concierge Cart Bar -->
+  <div class="floating-concierge" id="floatingCartBar">
+    <div class="concierge-left" onclick="openCartSheet()">
+      <div class="cart-bubble-hub">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="cart-bubble-count" id="cartCountBadge">0</span>
+      </div>
+      <div class="concierge-details">
+        <span class="concierge-sub"><span id="cartCountText">0 items</span> in bag</span>
+        <span class="concierge-sum" id="cartSumDisplay"><span class="rs">Rs.</span>0</span>
+      </div>
+    </div>
+    <button class="btn-concierge-checkout" onclick="openCartSheet()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    Checkout on WhatsApp
+  </button>
+</div>
+
+  <!-- Cart Drawer Sheet -->
+  <div class="drawer-scrim" id="cartSheetModal" onclick="handleCartModalBg(event)">
+    <div class="drawer-panel">
+      <div class="drawer-top">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <img src="logo.png" alt="Al Burr Logo" style="width:32px; height:32px; object-fit:contain; filter:drop-shadow(0 2px 6px rgba(229,169,59,0.5));">
+          <h3 class="drawer-title" style="margin:0;">Your Order Bag</h3>
+        </div>
+        <button class="drawer-close" onclick="closeCartSheet()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="drawer-items-list" id="cartItemsListWrap">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="drawer-bottom">
+        <div class="input-address-field">
+          <label>Delivery Address & Contact Number:</label>
+          <input type="text" id="orderDeliveryAddress" placeholder="e.g. Street, House #, Landmark...">
+        </div>
+
+        <div class="ledger-row">
+          <span>Subtotal</span>
+          <span id="sheetSubtotalVal">Rs. 0</span>
+        </div>
+        <div class="ledger-row">
+          <span>Express Delivery</span>
+          <span style="color:#34d399; font-weight:800;">FREE</span>
+        </div>
+        <div class="ledger-row grand-total">
+          <span>Total Amount</span>
+          <span id="sheetTotalVal" style="color:var(--gold-400);">Rs. 0</span>
+        </div>
+
+        <button class="btn-dispatch-wa" onclick="submitCartWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Send Order to WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Phone Settings Modal -->
+  <div class="drawer-scrim" id="phoneSettingsModal" onclick="handlePhoneModalBg(event)">
+    <div class="luxe-dialog">
+      <h3 style="font-family:'Syne',sans-serif; font-size:20px; color:#fff; margin-bottom:6px;">Set WhatsApp Order Number</h3>
+      <p style="font-size:12.5px; color:#94a3b8; margin-bottom:14px;">
+        Enter your restaurant's WhatsApp phone number with international country code (e.g. <code>923001234567</code> without + or spaces):
+      </p>
+      <input type="text" id="phoneSettingInput" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(229,169,59,0.3); border-radius:10px; padding:11px 16px; color:#fff; font-size:15px; font-weight:800; margin-bottom:16px;" placeholder="923001234567">
+      
+      <div style="display:flex; gap:10px;">
+        <button onclick="closeNumberModal()" style="flex:1; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); color:#fff; padding:11px; border-radius:10px; cursor:pointer; font-weight:700;">Cancel</button>
+        <button onclick="saveNumberSetting()" style="flex:1; background:var(--wa-gradient); border:none; color:#fff; padding:11px; border-radius:10px; cursor:pointer; font-weight:800;">Save & Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-luxe" id="toastNotice">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastNoticeMsg">Added!</span>
+  </div>
+
+  <script>
+    // ==========================================
+    // 1. CONFIGURATION
+    // ==========================================
+    const DEFAULT_WHATSAPP = "923001234567";
+    const RESTAURANT_NAME = "Al Burr Fast Food & Pizza";
+
+    function getWhatsAppNum() {
+      return localStorage.getItem('alburr_whatsapp') || DEFAULT_WHATSAPP;
+    }
+
+    function setWhatsAppNum(num) {
+      const clean = num.replace(/[^0-9]/g, '');
+      if (clean.length >= 7) {
+        localStorage.setItem('alburr_whatsapp', clean);
+        updateHeaderPhone();
+        showNotification("WhatsApp number updated successfully!");
+        return true;
+      }
+      alert("Please enter a valid phone number with country code (e.g. 923001234567)");
+      return false;
+    }
+
+    function updateHeaderPhone() {
+      const num = getWhatsAppNum();
+      document.getElementById('currentNumberText').textContent = "+" + num;
+      const directBtn = document.getElementById('directWaChatBtn');
+      const text = encodeURIComponent(`Hello ${RESTAURANT_NAME}! I want to place an order.`);
+      directBtn.href = `https://wa.me/${num}?text=${text}`;
+
+      const callBtn = document.getElementById('directCallBtn');
+      if (callBtn) callBtn.href = `tel:+${num}`;
+    }
+
+    // ==========================================
+    // 2. COMPLETE EXCLUSIVE MENU DATABASE
+    // ==========================================
+    const MENU_DATABASE = [
+      // ----------------------------------------------------
+      // SECTION 1: ALL 28 VALUE DEALS
+      // ----------------------------------------------------
+      {
+        id: "deal-1",
+        cat: "deals",
+        nameEn: "Deal 1",
+        desc: "1 Small Pizza + 345ml Chilled Soft Drink",
+        price: 450,
+        badge: "Hot Pick",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-2",
+        cat: "deals",
+        nameEn: "Deal 2",
+        desc: "1 Medium Pizza + 1 Liter Chilled Soft Drink",
+        price: 950,
+        badge: "Bestseller",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-3",
+        cat: "deals",
+        nameEn: "Deal 3",
+        desc: "1 Large Pizza + 1 Liter Chilled Soft Drink",
+        price: 1250,
+        badge: "Super Saver",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-4",
+        cat: "deals",
+        nameEn: "Deal 4",
+        desc: "1 Large Pizza + 1 Baked Pasta + 1 Liter Soft Drink",
+        price: 1750,
+        badge: "Gourmet Feast",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-5",
+        cat: "deals",
+        nameEn: "Deal 5",
+        desc: "2 Medium Pizzas + 5 Crispy Wings + 1 Liter Drink",
+        price: 1700,
+        badge: "Party Combo",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-6",
+        cat: "deals",
+        nameEn: "Deal 6",
+        desc: "3 Large Pizzas + 10 Wings + 1.5 Liter Drink",
+        price: 3800,
+        badge: "Mega Feast",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-7",
+        cat: "deals",
+        nameEn: "Deal 7",
+        desc: "2 Oven Baked Pastas + 500ml Drink",
+        price: 800,
+        badge: "Pasta Duo",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-8",
+        cat: "deals",
+        nameEn: "Deal 8",
+        desc: "2 Small Pizzas + 500ml Soft Drink",
+        price: 750,
+        badge: "Duo Deal",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-9",
+        cat: "deals",
+        nameEn: "Deal 9",
+        desc: "3 Small Pizzas + 1 Liter Soft Drink",
+        price: 1000,
+        badge: "Triple Craver",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-10",
+        cat: "deals",
+        nameEn: "Deal 10",
+        desc: "1 Small Pizza + 1 Small Baked Pasta",
+        price: 750,
+        badge: "Pizza & Pasta",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-11",
+        cat: "deals",
+        nameEn: "Deal 11",
+        desc: "1 Large Pizza + 1 Medium Pizza + 1 Liter Drink",
+        price: 2000,
+        badge: "Family Pick",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-12",
+        cat: "deals",
+        nameEn: "Deal 12",
+        desc: "2 Large Pizzas + 2 Medium Pizzas + 2 Liter Drink",
+        price: 3700,
+        badge: "Grand Banquet",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-13",
+        cat: "deals",
+        nameEn: "Deal 13",
+        desc: "4 Zinger Burgers + 1 Liter Soft Drink",
+        price: 1200,
+        badge: "Zinger Quartet",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-14",
+        cat: "deals",
+        nameEn: "Deal 14",
+        desc: "2 Zinger Burgers + 1 Liter Soft Drink",
+        price: 650,
+        badge: "Duo Zinger",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-15",
+        cat: "deals",
+        nameEn: "Deal 15",
+        desc: "1 Zinger Burger + 1 Half Fries + 345ml Drink",
+        price: 450,
+        badge: "Solo Craver",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-16",
+        cat: "deals",
+        nameEn: "Deal 16",
+        desc: "1 XL Giant Pizza + 1 Liter Soft Drink",
+        price: 1700,
+        badge: "XL Jumbo",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-17",
+        cat: "deals",
+        nameEn: "Deal 17",
+        desc: "2 XL Giant Pizzas + 1.5 Liter Soft Drink",
+        price: 3500,
+        badge: "Dual XL",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-18",
+        cat: "deals",
+        nameEn: "Deal 18",
+        desc: "10 Golden Nuggets + 10 Wings + 1 Liter Drink",
+        price: 1000,
+        badge: "Snack Platter",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-19",
+        cat: "deals",
+        nameEn: "Deal 19",
+        desc: "5 Golden Nuggets + 5 Wings + 500ml Drink",
+        price: 550,
+        badge: "Mini Snack",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-20",
+        cat: "deals",
+        nameEn: "Deal 20",
+        desc: "1 Zinger Paratha + 1 Chicken Paratha + 500ml Drink",
+        price: 550,
+        badge: "Paratha Duo",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-21",
+        cat: "deals",
+        nameEn: "Deal 21",
+        desc: "5 Chapli Burgers + 5 Patty Burgers + 1 Liter Drink",
+        price: 1350,
+        badge: "10 Burger Box",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-22",
+        cat: "deals",
+        nameEn: "Deal 22",
+        desc: "1 Zinger Burger + 1 Pasta + 1 Fries + 345ml Drink",
+        price: 950,
+        badge: "Ultimate 4-in-1",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-23",
+        cat: "deals",
+        nameEn: "Deal 23",
+        desc: "2 Club Sandwiches + 1 Liter Soft Drink",
+        price: 600,
+        badge: "Toast Feast",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-24",
+        cat: "deals",
+        nameEn: "Deal 24",
+        desc: "10 Shawarmas + 1.5 Liter Soft Drink",
+        price: 1600,
+        badge: "Shawarma Box",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-25",
+        cat: "deals",
+        nameEn: "Deal 25",
+        desc: "10 Chicken Burgers + 1.5 Liter Soft Drink",
+        price: 1200,
+        badge: "10 Burgers",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-26",
+        cat: "deals",
+        nameEn: "Deal 26",
+        desc: "6 Chicken Shawarmas + 1 Crispy Fries",
+        price: 960,
+        badge: "Popular Deal",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-27",
+        cat: "deals",
+        nameEn: "Deal 27",
+        desc: "4 Zinger Paratha Rolls + 1 Liter Soft Drink",
+        price: 1200,
+        badge: "Roll Feast",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "deal-28",
+        cat: "deals",
+        nameEn: "Deal 28",
+        desc: "2 Large Pizzas + 1.5 Liter Soft Drink",
+        price: 2300,
+        badge: "Dual Large Feast",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=350&q=80"
+      },
+
+      // ----------------------------------------------------
+      // SECTION 2: CROWN & SPECIAL PIZZAS
+      // ----------------------------------------------------
+      {
+        id: "pizza-crown-crust",
+        cat: "crown-pizza",
+        nameEn: "Crown Crust Signature Pizza",
+        desc: "Chicken Fajita, Kabab Roll, Melted Mozzarella, Black Olives, Sliced Mushrooms, Crisp Onions, Capsicum & Garlic Mayo folded into royal crown crust pockets.",
+        badge: "Chef Signature ⭐",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Medium", price: 1100, default: true },
+          { name: "Large", price: 1399 },
+          { name: "XL", price: 2399 }
+        ]
+      },
+      {
+        id: "pizza-diamond-crown",
+        cat: "crown-pizza",
+        nameEn: "Diamond Crown Crust Pizza",
+        desc: "Diamond folded crust with overflowing cheese pockets, seasoned barbecue chicken cuts, and rich tomato herb glaze.",
+        badge: "Royal Special",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Medium", price: 1050, default: true },
+          { name: "Large", price: 1500 },
+          { name: "XL", price: 2200 }
+        ]
+      },
+      {
+        id: "pizza-special-alburr",
+        cat: "crown-pizza",
+        nameEn: "Al Burr Special Pizza",
+        desc: "House master recipe with smoked chicken, pepperoni, sausages, black olives, sauteed mushrooms, and double mozzarella.",
+        badge: "Most Ordered",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Small", price: 450 },
+          { name: "Medium", price: 950, default: true },
+          { name: "Large", price: 1300 },
+          { name: "XL", price: 1800 }
+        ]
+      },
+      {
+        id: "pizza-malai-boti",
+        cat: "crown-pizza",
+        nameEn: "Malai Boti Pizza",
+        desc: "Creamy char-grilled malai boti chicken chunks, crisp sliced onions, green bell peppers, and melted mozzarella.",
+        badge: "Creamy BBQ",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Small", price: 450 },
+          { name: "Medium", price: 950, default: true },
+          { name: "Large", price: 1300 },
+          { name: "XL", price: 1800 }
+        ]
+      },
+      {
+        id: "pizza-kabab-crust",
+        cat: "crown-pizza",
+        nameEn: "Kabab Crust Pizza",
+        desc: "Spiced seekh kabab embedded all around the outer crust with seasoned barbecue chicken toppings.",
+        badge: "Kabab Crust",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Small", price: 450 },
+          { name: "Medium", price: 950, default: true },
+          { name: "Large", price: 1300 },
+          { name: "XL", price: 1800 }
+        ]
+      },
+      {
+        id: "pizza-behari-kabab",
+        cat: "crown-pizza",
+        nameEn: "Behari Kabab Pizza",
+        desc: "Spicy tender Behari kabab bites, green chilies, onions, and signature cheese blend.",
+        badge: "Spicy",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Small", price: 450 },
+          { name: "Medium", price: 950, default: true },
+          { name: "Large", price: 1300 },
+          { name: "XL", price: 1800 }
+        ]
+      },
+      {
+        id: "pizza-arrival-series",
+        cat: "crown-pizza",
+        nameEn: "Al Burr Classic Pizzas",
+        desc: "Choice of: Chicken Tikka, Chicken Fajita, Chicken Supreme, Cheese Lover, Hot & Spicy, Vegetable Lover, or Half & Half Pizza.",
+        badge: "Value Favorite",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Small", price: 350 },
+          { name: "Medium", price: 900, default: true },
+          { name: "Large", price: 1200 },
+          { name: "XL", price: 1600 }
+        ]
+      },
+
+      // ----------------------------------------------------
+      // SECTION 3: STUFFER & PERI PERI PIZZAS
+      // ----------------------------------------------------
+      {
+        id: "pizza-stuffer-all",
+        cat: "stuffer-pizza",
+        nameEn: "Stuffer Pizza (Chicken / Cheese / Kabab)",
+        desc: "Thick crust stuffed with Chicken Stuffer, Cheese Stuffer, or Kabab Stuffer. Extra chicken & cheese topping +100.",
+        badge: "Stuffed Crust",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Small", price: 500 },
+          { name: "Medium", price: 1000, default: true },
+          { name: "Large", price: 1400 },
+          { name: "XL", price: 2000 }
+        ]
+      },
+      {
+        id: "pizza-malai-kabab-stuffer",
+        cat: "stuffer-pizza",
+        nameEn: "Malai Botti Kabab Stuffer (New Arrival)",
+        desc: "Yummy Chicken, Mozzarella & Cheddar Cheese, Green Chilli with Mustard Sauce. Choice of Malai Boti or Stick Kabab.",
+        badge: "★ NEW ARRIVAL ★",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Medium", price: 950, default: true },
+          { name: "Large", price: 1300 },
+          { name: "XL", price: 2000 }
+        ]
+      },
+      {
+        id: "pizza-peri-peri",
+        cat: "stuffer-pizza",
+        nameEn: "Peri Peri Pizza",
+        desc: "Tangy & spicy African peri peri marinated grilled chicken, sliced peppers, red onions, and mozzarella cheese.",
+        badge: "Spicy 🌶️",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Medium", price: 1000, default: true },
+          { name: "Large", price: 1500 },
+          { name: "XL", price: 1900 }
+        ]
+      },
+
+      // ----------------------------------------------------
+      // SECTION 4: BURGERS
+      // ----------------------------------------------------
+      {
+        id: "b-alburr-special",
+        cat: "burgers",
+        nameEn: "Al Burr Special Burger",
+        desc: "Signature double chicken fillet with fried egg, melted cheddar, crisp lettuce, and chef's secret dressing.",
+        price: 500,
+        badge: "Chef Choice",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-alburr-tower",
+        cat: "burgers",
+        nameEn: "Al Burr Tower Burger",
+        desc: "Stacked tall monster burger with two crispy fillets, hash patty, iceberg, and spicy chili mayo.",
+        price: 500,
+        badge: "Giant Tower",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-special-zinger",
+        cat: "burgers",
+        nameEn: "Special Zinger Burger",
+        desc: "Golden fried juicy whole chicken fillet, crisp iceberg lettuce, and creamy spicy burger mayo.",
+        price: 300,
+        badge: "Bestseller",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-zinger-cheese",
+        cat: "burgers",
+        nameEn: "Zinger Cheese Burger",
+        desc: "Crispy fried zinger breast topped with a rich slice of melted yellow American cheddar.",
+        price: 400,
+        badge: "Cheese Loaded",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-double-decker",
+        cat: "burgers",
+        nameEn: "Double Decker Burger",
+        desc: "Two juicy patties, toasted sesame brioche bun, double cheese layer, and crunchy pickles.",
+        price: 450,
+        badge: "Double Delight",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-crisper-burger",
+        cat: "burgers",
+        nameEn: "Crisper Burger",
+        desc: "Super crunchy crumbed golden fillet with fresh tangy burger relish.",
+        price: 350,
+        badge: "Extra Crunchy",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-malai-boti-burger",
+        cat: "burgers",
+        nameEn: "Malai Boti Burger",
+        desc: "Creamy char-grilled malai boti chicken chunks with garlic herb mayo in toasted bun.",
+        price: 350,
+        badge: "Smoky BBQ",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-bbq-burger",
+        cat: "burgers",
+        nameEn: "BBQ Burger",
+        desc: "Grilled chicken patty basted in smoky barbecue glaze with caramelized onion rings.",
+        price: 350,
+        badge: "BBQ Glaze",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-chicken-cheese",
+        cat: "burgers",
+        nameEn: "Chicken Cheese Burger",
+        desc: "Seasoned chicken patty topped with melted cheddar, lettuce, and mayo.",
+        price: 300,
+        badge: "Classic",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-chicken-burger",
+        cat: "burgers",
+        nameEn: "Chicken Burger",
+        desc: "Classic delicious minced chicken patty with salad and creamy dressing.",
+        price: 250,
+        badge: "Value Pick",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-chicken-achari",
+        cat: "burgers",
+        nameEn: "Chicken Achari Burger",
+        desc: "Tangy pickle-spiced chicken patty with zesty achar herbs in soft bun.",
+        price: 250,
+        badge: "Zesty Achari",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-kabab-burger",
+        cat: "burgers",
+        nameEn: "Kabab Burger",
+        desc: "Spiced seekh kabab with onion rings, mint sauce, and crisp lettuce in bun.",
+        price: 300,
+        badge: "Seekh Kabab",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-tikka-burger",
+        cat: "burgers",
+        nameEn: "Tikka Burger",
+        desc: "Smoky spicy tikka seasoned patty with charcoal aroma and lettuce.",
+        price: 300,
+        badge: "Tikka Flavor",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-patty-burger",
+        cat: "burgers",
+        nameEn: "Patty Burger",
+        desc: "Crispy fried seasoned chicken patty, shredded cabbage, and creamy mayo.",
+        price: 250,
+        badge: "Budget Friendly",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-double-egg",
+        cat: "burgers",
+        nameEn: "Double Egg Burger",
+        desc: "Double fried fluffy seasoned egg patty with special spices and toasted bun.",
+        price: 120,
+        badge: "Street Special",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "b-special-mayo",
+        cat: "burgers",
+        nameEn: "Special Mayo Burger",
+        desc: "Generously smothered in signature garlic mayo dressing with crisp veggies.",
+        price: 150,
+        badge: "Mayo Loaded",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=350&q=80"
+      },
+
+      // ----------------------------------------------------
+      // SECTION 5: SANDWICHES & PIZZA SANDWICH
+      // ----------------------------------------------------
+      {
+        id: "sw-pizza-sandwich",
+        cat: "sandwiches",
+        nameEn: "Pizza Sandwich (Special)",
+        desc: "Fresh baked crust stuffed with gooey mozzarella, chicken chunks, pizza sauce, black olives & capsicum.",
+        price: 700,
+        badge: "Must Try ⭐",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sw-grill",
+        cat: "sandwiches",
+        nameEn: "Grilled Chicken Sandwich",
+        desc: "Panini pressed golden sandwich with grilled chicken breast, melted cheese, and herbs.",
+        price: 450,
+        badge: "Panini Press",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sw-zinger",
+        cat: "sandwiches",
+        nameEn: "Zinger Sandwich",
+        desc: "Crunchy fried zinger chicken fillet cutlets layered between toasted bread with spicy sauce.",
+        price: 400,
+        badge: "Crispy",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sw-malai-boti",
+        cat: "sandwiches",
+        nameEn: "Malai Boti Sandwich",
+        desc: "Tender malai chicken shreds with rich creamy herb filling and fresh cucumbers.",
+        price: 400,
+        badge: "Creamy",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sw-tikka",
+        cat: "sandwiches",
+        nameEn: "Tikka Sandwich",
+        desc: "Spiced BBQ chicken tikka bits, mint chutney, and melted cheese slice.",
+        price: 400,
+        badge: "Tikka BBQ",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sw-cheese",
+        cat: "sandwiches",
+        nameEn: "Cheese Sandwich",
+        desc: "Double melted cheddar and mozzarella cheese with butter toasted golden bread.",
+        price: 400,
+        badge: "Cheesy",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sw-kabab",
+        cat: "sandwiches",
+        nameEn: "Kabab Sandwich",
+        desc: "Spiced seekh kabab strips with diced onions and green sauce in toasted sandwich.",
+        price: 350,
+        badge: "Kabab",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sw-chicken",
+        cat: "sandwiches",
+        nameEn: "Chicken Sandwich",
+        desc: "Shredded chicken with classic coleslaw and mayo dressing.",
+        price: 300,
+        badge: "Classic",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=350&q=80"
+      },
+
+      // ----------------------------------------------------
+      // SECTION 6: SPECIAL SHAWARMA
+      // ----------------------------------------------------
+      {
+        id: "sh-alburr",
+        cat: "shawarma",
+        nameEn: "Al Burr Special Shawarma",
+        desc: "Our signature chicken shawarma loaded with extra roasted chicken, pickles, toum garlic sauce in soft pita.",
+        price: 250,
+        badge: "Signature Roll",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sh-zinger",
+        cat: "shawarma",
+        nameEn: "Zinger Shawarma",
+        desc: "Crispy fried zinger chicken strips, garlic sauce, fresh cabbage rolled in warm pita.",
+        price: 250,
+        badge: "Crispy",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sh-zinger-cheese",
+        cat: "shawarma",
+        nameEn: "Zinger Cheese Shawarma",
+        desc: "Crispy zinger chicken strips wrapped with a rich layer of melted cheese sauce.",
+        price: 350,
+        badge: "Cheese Melt",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sh-malai",
+        cat: "shawarma",
+        nameEn: "Malai Shawarma",
+        desc: "Tender smoky malai boti chicken chunks rolled with creamy garlic toum sauce.",
+        price: 350,
+        badge: "Creamy BBQ",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sh-bbq",
+        cat: "shawarma",
+        nameEn: "BBQ Shawarma",
+        desc: "Smoky barbecue shredded chicken with grilled onions and special pita roll.",
+        price: 360,
+        badge: "Smoky Glaze",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sh-kabab",
+        cat: "shawarma",
+        nameEn: "Kabab Shawarma",
+        desc: "Spiced seekh kabab wrapped in pita bread with garlic mayo and salad.",
+        price: 340,
+        badge: "Seekh Kabab",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sh-tikka",
+        cat: "shawarma",
+        nameEn: "Tikka Shawarma",
+        desc: "Charcoal flavored spicy chicken tikka pieces in pita with fresh dressing.",
+        price: 320,
+        badge: "Spicy Tikka",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sh-achari",
+        cat: "shawarma",
+        nameEn: "Chicken Achari Shawarma",
+        desc: "Tangy pickle-infused spiced chicken with garlic spread in fresh bread.",
+        price: 220,
+        badge: "Achari",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sh-classic",
+        cat: "shawarma",
+        nameEn: "Classic Chicken Shawarma",
+        desc: "Fresh pita bread filled with roasted chicken, toum sauce, and pickled cucumbers.",
+        price: 170,
+        badge: "All-Time Classic",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sh-veg",
+        cat: "shawarma",
+        nameEn: "Vegetable Shawarma",
+        desc: "Fresh bell peppers, cucumbers, lettuce, and garlic mayo in warm pita.",
+        price: 120,
+        badge: "Garden Veg",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "sh-wrap",
+        cat: "shawarma",
+        nameEn: "Signature Tortilla Wrap",
+        desc: "Jumbo warm tortilla rolled with crispy chicken strips, melted cheese sauce, and salad.",
+        price: 400,
+        badge: "Tortilla Wrap",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+
+      // ----------------------------------------------------
+      // SECTION 7: PARATHA ROLLS
+      // ----------------------------------------------------
+      {
+        id: "pr-alburr",
+        cat: "paratha-rolls",
+        nameEn: "Al Burr Paratha Roll",
+        desc: "Crispy fried golden paratha wrapped around signature seasoned chicken and green chutney.",
+        price: 300,
+        badge: "Crispy Paratha",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "pr-zinger",
+        cat: "paratha-rolls",
+        nameEn: "Zinger Paratha Roll",
+        desc: "Crunchy fried zinger chicken fillet in flaky hot paratha with garlic mayo.",
+        price: 300,
+        badge: "Bestseller",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "pr-cheese",
+        cat: "paratha-rolls",
+        nameEn: "Cheese Paratha Roll",
+        desc: "Hot flaky paratha stuffed with melted mozzarella, cheddar cheese, and chicken.",
+        price: 350,
+        badge: "Cheesy",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "pr-malai-boti",
+        cat: "paratha-rolls",
+        nameEn: "Malai Boti Paratha Roll",
+        desc: "Creamy barbecued chicken malai boti rolled in hot crispy flaky paratha.",
+        price: 350,
+        badge: "Creamy BBQ",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "pr-tikka",
+        cat: "paratha-rolls",
+        nameEn: "Tikka Paratha Roll",
+        desc: "Spicy charcoal-grilled chicken tikka pieces with sliced onions and mint raita.",
+        price: 320,
+        badge: "Spicy Tikka",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "pr-kabab",
+        cat: "paratha-rolls",
+        nameEn: "Kabab Paratha Roll",
+        desc: "Smoky seekh kabab inside crispy golden paratha with zesty chutney.",
+        price: 300,
+        badge: "Kabab Roll",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "pr-chicken",
+        cat: "paratha-rolls",
+        nameEn: "Chicken Paratha Roll",
+        desc: "Seasoned tender chicken chunks rolled in hot flaky paratha.",
+        price: 250,
+        badge: "Classic",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "pr-achari",
+        cat: "paratha-rolls",
+        nameEn: "Chicken Achari Paratha Roll",
+        desc: "Spicy pickle-infused chicken chunks in freshly prepared flaky paratha.",
+        price: 300,
+        badge: "Achari",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "pr-veg",
+        cat: "paratha-rolls",
+        nameEn: "Vegetable Paratha Roll",
+        desc: "Fresh seasoned vegetables with crisp salad in warm paratha.",
+        price: 170,
+        badge: "Garden Veg",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "pr-platter",
+        cat: "paratha-rolls",
+        nameEn: "Paratha Platter (3 Rolls)",
+        desc: "Generous combo platter containing 3 freshly prepared paratha rolls with dips.",
+        price: 450,
+        badge: "3 Rolls Platter",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+
+      // ----------------------------------------------------
+      // SECTION 8: PASTA & SPECIAL ROLLS
+      // ----------------------------------------------------
+      {
+        id: "pasta-alburr-special",
+        cat: "pasta-rolls",
+        nameEn: "Al Burr Special Pasta",
+        desc: "Chef special baked pasta loaded with chicken cubes, creamy white sauce, mushrooms, and melted cheese crust.",
+        badge: "Chef Special",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Medium", price: 450, default: true },
+          { name: "Large", price: 800 }
+        ]
+      },
+      {
+        id: "pasta-crunchy",
+        cat: "pasta-rolls",
+        nameEn: "Crunchy Pasta",
+        desc: "Baked pasta topped with crispy golden fried chicken tenders, cheese, and herb sauce.",
+        badge: "Crunchy",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Medium", price: 450, default: true },
+          { name: "Large", price: 800 }
+        ]
+      },
+      {
+        id: "pasta-hot-spicy",
+        cat: "pasta-rolls",
+        nameEn: "Hot & Spicy Pasta",
+        desc: "Fiery red chili seasoned chicken, red peppers, and baked bubbling mozzarella.",
+        badge: "Spicy 🌶️",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Large", price: 700, default: true }
+        ]
+      },
+      {
+        id: "pasta-full-creamy",
+        cat: "pasta-rolls",
+        nameEn: "Full Creamy Pasta",
+        desc: "Rich Alfredo cream base, garlic butter chicken, and melted cheddar & mozzarella.",
+        badge: "Extra Creamy",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Large", price: 700, default: true }
+        ]
+      },
+      {
+        id: "roll-spin",
+        cat: "pasta-rolls",
+        nameEn: "Spin Roll (4 Pcs)",
+        desc: "4 pieces of spiral baked stuffed rolls packed with seasoned chicken and cheese.",
+        price: 500,
+        badge: "4 Pcs",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "roll-creamy",
+        cat: "pasta-rolls",
+        nameEn: "Full Creamy Roll (4 Pcs)",
+        desc: "4 pieces of melt-in-the-mouth creamy chicken filled rolls with garlic dip.",
+        price: 550,
+        badge: "Creamy 4 Pcs",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "roll-alburr-special",
+        cat: "pasta-rolls",
+        nameEn: "Al Burr Special Roll (4 Pcs)",
+        desc: "4 pieces of signature stuffed rolls with black olives, chicken, and mozzarella.",
+        price: 500,
+        badge: "Special 4 Pcs",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+
+      // ----------------------------------------------------
+      // SECTION 9: WINGS & NUGGETS
+      // ----------------------------------------------------
+      {
+        id: "w-hot-wings",
+        cat: "wings-chicken",
+        nameEn: "Hot Wings",
+        desc: "Crispy fried chicken wings tossed in fiery hot spice blend.",
+        price: 500,
+        badge: "Fiery 🌶️",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "w-white-pepper",
+        cat: "wings-chicken",
+        nameEn: "White Pepper Wings",
+        desc: "Crispy wings coated with fragrant crushed white pepper sauce.",
+        price: 600,
+        badge: "House Secret",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "w-black-pepper",
+        cat: "wings-chicken",
+        nameEn: "Black Pepper Wings",
+        desc: "Crispy chicken wings glazed with bold cracked black pepper gravy.",
+        price: 600,
+        badge: "Bold Taste",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "w-single-wing",
+        cat: "wings-chicken",
+        nameEn: "Chicken Wing (1 Pc)",
+        desc: "Single jumbo crispy fried wing.",
+        price: 200,
+        badge: "1 Pc",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "w-oven-baked",
+        cat: "wings-chicken",
+        nameEn: "Oven Baked Wings",
+        desc: "Tender baked chicken wings marinated in special seasoning and roasted to perfection.",
+        badge: "Oven Baked",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "6 Pieces", price: 300, default: true },
+          { name: "12 Pieces", price: 600 }
+        ]
+      },
+      {
+        id: "w-nuggets",
+        cat: "wings-chicken",
+        nameEn: "Golden Crispy Nuggets",
+        desc: "Golden fried juicy 100% chicken breast nuggets served with garlic dip.",
+        badge: "Kids Favorite",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "6 Pieces", price: 350, default: true },
+          { name: "12 Pieces", price: 550 }
+        ]
+      },
+
+      // ----------------------------------------------------
+      // SECTION 10: DONER & PLATTERS
+      // ----------------------------------------------------
+      {
+        id: "doner-special",
+        cat: "doner-platters",
+        nameEn: "Special Doner",
+        desc: "Turkish style spit-roasted chicken with fresh salad and rich house dressings in toasted bread.",
+        badge: "Special Doner ⭐",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Doner Half", price: 290, default: true },
+          { name: "Doner Full", price: 600 }
+        ]
+      },
+      {
+        id: "wrap-deal-arabic",
+        cat: "doner-platters",
+        nameEn: "Arabic Wrap (Wrap Deal)",
+        desc: "Traditional Lebanese style wrap with juicy spiced chicken, fries inside, and garlic toum.",
+        price: 400,
+        badge: "Wrap Deal",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "wrap-deal-kabab",
+        cat: "doner-platters",
+        nameEn: "Special Kabab Wrap (Wrap Deal)",
+        desc: "Grilled seekh kabab wrapped in warm tortilla with fresh salad and spicy mayo.",
+        price: 400,
+        badge: "Wrap Deal",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "wrap-deal-jumbo",
+        cat: "doner-platters",
+        nameEn: "Special Jumbo Wrap (Zinger, Chicken, Kabab)",
+        desc: "Giant 3-in-1 wrap packed with crispy zinger, tender chicken, seekh kabab, and cheese sauce.",
+        price: 450,
+        badge: "Jumbo 3-in-1",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "platter-chicken",
+        cat: "doner-platters",
+        nameEn: "Chicken Platter (3 Breads)",
+        desc: "Generous platter of roasted chicken chunks, 3 fresh pita breads, garlic dip, and seasoned salad.",
+        price: 360,
+        badge: "3 Breads",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "platter-special-zinger",
+        cat: "doner-platters",
+        nameEn: "Special Zinger Mix Platter (3 Breads)",
+        desc: "Crispy fried zinger strips + roasted chicken cuts, 3 warm breads, and spicy dipping sauces.",
+        price: 500,
+        badge: "Mix Platter",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "platter-malai-boti",
+        cat: "doner-platters",
+        nameEn: "Malai Boti Platter (3 Breads)",
+        desc: "Creamy barbecued malai boti chicken cuts served with 3 pita breads and special dip.",
+        price: 450,
+        badge: "Creamy Platter",
+        tagClass: "emerald",
+        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=350&q=80"
+      },
+      {
+        id: "platter-chicken-tikka",
+        cat: "doner-platters",
+        nameEn: "Chicken Tikka Platter (3 Breads)",
+        desc: "Charcoal flavored spicy chicken tikka pieces served with 3 breads and fresh raita.",
+        price: 450,
+        badge: "Tikka Platter",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=350&q=80"
+      },
+
+      // ----------------------------------------------------
+      // SECTION 11: FRIES & SIDES
+      // ----------------------------------------------------
+      {
+        id: "f-pizza-fries",
+        cat: "fries",
+        nameEn: "Al Burr Pizza Fries",
+        desc: "Crispy crinkle fries baked under melted mozzarella, pizza sauce, chicken fajita chunks, and jalapenos.",
+        badge: "Bestseller 🔥",
+        tagClass: "flame",
+        img: "https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Small", price: 350, default: true },
+          { name: "Large", price: 550 }
+        ]
+      },
+      {
+        id: "f-regular-fries",
+        cat: "fries",
+        nameEn: "Crispy Potato Fries",
+        desc: "Golden crispy fried potatoes lightly salted, served with ketchup and dip.",
+        badge: "Classic Side",
+        tagClass: "gold",
+        img: "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=350&q=80",
+        variants: [
+          { name: "Regular", price: 120, default: true },
+          { name: "Family", price: 220 }
+        ]
+      }
+    ];
+
+    // ==========================================
+    // 3. VARIANT & CART STATE
+    // ==========================================
+    const selectedVariantState = {};
+    let cart = [];
+
+    function initDefaultVariants() {
+      MENU_DATABASE.forEach(item => {
+        if (item.variants && item.variants.length > 0) {
+          const defIdx = item.variants.findIndex(v => v.default);
+          selectedVariantState[item.id] = defIdx >= 0 ? defIdx : 0;
+        }
+      });
+    }
+
+    // ==========================================
+    // 4. WHATSAPP LINK GENERATOR
+    // ==========================================
+    function generateDishWhatsAppUrl(dishId) {
+      const dish = MENU_DATABASE.find(d => d.id === dishId);
+      if (!dish) return "#";
+
+      const phone = getWhatsAppNum();
+      let itemName = dish.nameEn;
+      let price = dish.price;
+
+      if (dish.variants && dish.variants.length > 0) {
+        const vIdx = selectedVariantState[dish.id] || 0;
+        const v = dish.variants[vIdx];
+        itemName = `${dish.nameEn} (${v.name})`;
+        price = v.price;
+      }
+
+      const msg = 
+`Hello *${RESTAURANT_NAME}*! 🍔🍕
+
+I would like to order:
+• 1x *${itemName}*
+• *Price:* Rs. ${price.toLocaleString()}
+
+📍 *Delivery Details:*
+Name: 
+Address: 
+Contact: 
+
+Please confirm my order and estimated delivery time. Thank you!`;
+
+      return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    }
+
+    // ==========================================
+    // 5. RENDER MENU CONTENT
+    // ==========================================
+    const CATEGORY_DEFINITIONS = [
+      { key: "deals", titleEn: "Value Mega Deals (1 to 28)" },
+      { key: "crown-pizza", titleEn: "Crown Crust & Special Pizzas" },
+      { key: "stuffer-pizza", titleEn: "Stuffer & Peri Peri Pizzas" },
+      { key: "burgers", titleEn: "Special Burgers & Classics" },
+      { key: "sandwiches", titleEn: "Sandwiches & Pizza Sandwich" },
+      { key: "shawarma", titleEn: "Special Shawarma & Wraps" },
+      { key: "paratha-rolls", titleEn: "Crispy Paratha Rolls" },
+      { key: "pasta-rolls", titleEn: "Baked Pasta & Special Rolls" },
+      { key: "wings-chicken", titleEn: "Wings & Golden Nuggets" },
+      { key: "doner-platters", titleEn: "Doner, Wrap Deals & Platters" },
+      { key: "fries", titleEn: "Pizza Fries & Sides" }
+    ];
+
+    function renderMenuContent(filterCat = "all", searchStr = "") {
+      const container = document.getElementById('menuItemsContainer');
+      const emptyBox = document.getElementById('emptyStateBox');
+      const q = searchStr.trim().toLowerCase();
+
+      const filtered = MENU_DATABASE.filter(item => {
+        const catMatch = (filterCat === "all") || (item.cat === filterCat);
+        const searchMatch = !q || 
+          item.nameEn.toLowerCase().includes(q) ||
+          item.desc.toLowerCase().includes(q) ||
+          item.cat.toLowerCase().includes(q);
+        return catMatch && searchMatch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = "";
+        emptyBox.classList.add('show');
+        return;
+      }
+      emptyBox.classList.remove('show');
+
+      let html = "";
+
+      CATEGORY_DEFINITIONS.forEach(catDef => {
+        const catItems = filtered.filter(i => i.cat === catDef.key);
+        if (catItems.length === 0) return;
+
+        html += `
+          <div class="section-ribbon">
+            <div class="section-title">${catDef.titleEn}</div>
+            <span class="section-count">${catItems.length} dishes</span>
+          </div>
+        `;
+
+        catItems.forEach(item => {
+          const hasVariants = item.variants && item.variants.length > 0;
+          const currentVIdx = selectedVariantState[item.id] || 0;
+          const activePrice = hasVariants ? item.variants[currentVIdx].price : item.price;
+          const waUrl = generateDishWhatsAppUrl(item.id);
+
+          html += `
+            <div class="dish-card" id="card-${item.id}">
+              <div class="dish-body">
+                <div class="dish-text-col">
+                  <div>
+                    <div class="dish-pill-tags">
+                      ${item.badge ? `<span class="badge-tag ${item.tagClass || 'gold'}">${item.badge}</span>` : ''}
+                    </div>
+                    <h3 class="dish-name">${item.nameEn}</h3>
+                    <p class="dish-summary">${item.desc}</p>
+                  </div>
+                </div>
+
+                <div class="dish-visual">
+                  <img src="${item.img}" alt="${item.nameEn}" loading="lazy">
+                </div>
+              </div>
+
+              ${hasVariants ? `
+                <div class="size-tabs-rack">
+                  ${item.variants.map((v, idx) => `
+                    <button class="size-tab-btn ${idx === currentVIdx ? 'active' : ''}" 
+                            onclick="chooseVariant('${item.id}', ${idx})">
+                      ${v.name} • Rs. ${v.price}
+                    </button>
+                  `).join('')}
+                </div>
+              ` : ''}
+
+              <div class="dish-footbar">
+                <div class="dish-price-block">
+                  <span class="dish-price-prefix">Price</span>
+                  <div class="dish-price-digits" id="price-display-${item.id}">
+                    <span class="curr">Rs.</span>${activePrice.toLocaleString()}
+                  </div>
+                </div>
+
+                <div class="dish-button-cluster">
+                  <!-- PRIMARY WHATSAPP ORDER BUTTON ON EVERY DISH -->
+                  <a href="${waUrl}" target="_blank" class="btn-wa-order" id="wa-link-${item.id}" title="Order on WhatsApp">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Order on WhatsApp
+                  </a>
+
+                  <!-- Add to Cart -->
+                  <button class="btn-cart-stepper" onclick="addItemToCart('${item.id}')" title="Add to Bag">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      });
+
+      container.innerHTML = html;
+    }
+
+    function chooseVariant(dishId, variantIndex) {
+      selectedVariantState[dishId] = variantIndex;
+      const dish = MENU_DATABASE.find(d => d.id === dishId);
+      if (!dish || !dish.variants) return;
+
+      const variant = dish.variants[variantIndex];
+      const priceElem = document.getElementById(`price-display-${dishId}`);
+      if (priceElem) {
+        priceElem.innerHTML = `<span class="curr">Rs.</span>${variant.price.toLocaleString()}`;
+      }
+
+      const waBtn = document.getElementById(`wa-link-${dishId}`);
+      if (waBtn) {
+        waBtn.href = generateDishWhatsAppUrl(dishId);
+      }
+
+      const card = document.getElementById(`card-${dishId}`);
+      if (card) {
+        const btns = card.querySelectorAll('.size-tab-btn');
+        btns.forEach((btn, idx) => {
+          btn.classList.toggle('active', idx === variantIndex);
+        });
+      }
+    }
+
+    // ==========================================
+    // 6. CART MANAGEMENT
+    // ==========================================
+    function addItemToCart(dishId) {
+      const dish = MENU_DATABASE.find(d => d.id === dishId);
+      if (!dish) return;
+
+      let key = dish.id;
+      let variantName = "";
+      let price = dish.price;
+
+      if (dish.variants && dish.variants.length > 0) {
+        const vIdx = selectedVariantState[dish.id] || 0;
+        const v = dish.variants[vIdx];
+        key = `${dish.id}__${vIdx}`;
+        variantName = v.name;
+        price = v.price;
+      }
+
+      const existing = cart.find(ci => ci.key === key);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          key: key,
+          dishId: dish.id,
+          nameEn: dish.nameEn,
+          variantName: variantName,
+          price: price,
+          qty: 1
+        });
+      }
+
+      refreshCartBar();
+      showNotification(`Added ${dish.nameEn} ${variantName ? '(' + variantName + ')' : ''} to bag!`);
+    }
+
+    function updateCartItemQty(key, delta) {
+      const item = cart.find(ci => ci.key === key);
+      if (!item) return;
+
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(ci => ci.key !== key);
+      }
+
+      refreshCartBar();
+      renderCartSheetItems();
+    }
+
+    function refreshCartBar() {
+      const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+      const totalCost = cart.reduce((s, i) => s + (i.price * i.qty), 0);
+
+      document.getElementById('cartCountBadge').textContent = totalQty;
+      document.getElementById('cartCountText').textContent = `${totalQty} item${totalQty === 1 ? '' : 's'}`;
+      document.getElementById('cartSumDisplay').innerHTML = `<span class="rs">Rs.</span>${totalCost.toLocaleString()}`;
+    }
+
+    function renderCartSheetItems() {
+      const listWrap = document.getElementById('cartItemsListWrap');
+      const subtotalElem = document.getElementById('sheetSubtotalVal');
+      const totalElem = document.getElementById('sheetTotalVal');
+
+      if (cart.length === 0) {
+        listWrap.innerHTML = `
+          <div style="text-align:center; padding:36px 10px; color:#94a3b8;">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:10px;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <p style="font-weight:800; color:#fff; font-size:16px; font-family:'Syne',sans-serif;">Your Bag is Empty</p>
+            <p style="font-size:12.5px; margin-top:4px;">Add items using (+) or tap "Order on WhatsApp" directly on any dish!</p>
+          </div>
+        `;
+        subtotalElem.textContent = "Rs. 0";
+        totalElem.textContent = "Rs. 0";
+        return;
+      }
+
+      let subtotal = 0;
+      let html = "";
+
+      cart.forEach(item => {
+        const itemSum = item.price * item.qty;
+        subtotal += itemSum;
+
+        html += `
+          <div class="cart-entry">
+            <div>
+              <div class="cart-entry-title">${item.nameEn}</div>
+              ${item.variantName ? `<div class="cart-entry-variant">${item.variantName}</div>` : ''}
+              <div class="cart-entry-price">Rs. ${item.price.toLocaleString()} each</div>
+            </div>
+
+            <div class="drawer-stepper">
+              <button class="stepper-btn" onclick="updateCartItemQty('${item.key}', -1)">−</button>
+              <span class="stepper-num">${item.qty}</span>
+              <button class="stepper-btn" onclick="updateCartItemQty('${item.key}', 1)">+</button>
+            </div>
+          </div>
+        `;
+      });
+
+      listWrap.innerHTML = html;
+      subtotalElem.textContent = `Rs. ${subtotal.toLocaleString()}`;
+      totalElem.textContent = `Rs. ${subtotal.toLocaleString()}`;
+    }
+
+    function openCartSheet() {
+      renderCartSheetItems();
+      document.getElementById('cartSheetModal').classList.add('open');
+    }
+
+    function closeCartSheet() {
+      document.getElementById('cartSheetModal').classList.remove('open');
+    }
+
+    function handleCartModalBg(e) {
+      if (e.target.id === 'cartSheetModal') {
+        closeCartSheet();
+      }
+    }
+
+    function submitCartWhatsApp() {
+      if (cart.length === 0) {
+        alert("Your order bag is empty! Add items or tap 'Order on WhatsApp' on any dish.");
+        return;
+      }
+
+      const phone = getWhatsAppNum();
+      const addr = document.getElementById('orderDeliveryAddress').value.trim();
+
+      let orderText = "";
+      let grandTotal = 0;
+
+      cart.forEach((item, idx) => {
+        const itemTotal = item.price * item.qty;
+        grandTotal += itemTotal;
+        const vText = item.variantName ? ` (${item.variantName})` : "";
+        orderText += `${idx + 1}. *${item.nameEn}*${vText} x ${item.qty} = Rs. ${itemTotal.toLocaleString()}\n`;
+      });
+
+      const message = 
+`Hello *${RESTAURANT_NAME}*! 🍔🍕
+
+I would like to place this order:
+--------------------------------
+${orderText}--------------------------------
+*Total Amount:* Rs. ${grandTotal.toLocaleString()}
+*Delivery:* Express Delivery (FREE)
+
+📍 *Delivery Details:*
+Address: ${addr ? addr : "_Please enter delivery address_"}
+Payment: Cash on Delivery
+
+Please confirm my order and estimated dispatch time. Thank you!`;
+
+      const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, '_blank');
+      closeCartSheet();
+    }
+
+    // ==========================================
+    // 7. TOAST NOTIFICATIONS
+    // ==========================================
+    let toastTimer = null;
+    function showNotification(msg) {
+      const el = document.getElementById('toastNotice');
+      document.getElementById('toastNoticeMsg').textContent = msg;
+      el.classList.add('show');
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        el.classList.remove('show');
+      }, 2500);
+    }
+
+    // ==========================================
+    // 8. PHONE NUMBER SETTINGS
+    // ==========================================
+    function openNumberModal() {
+      document.getElementById('phoneSettingInput').value = getWhatsAppNum();
+      document.getElementById('phoneSettingsModal').classList.add('open');
+    }
+    function closeNumberModal() {
+      document.getElementById('phoneSettingsModal').classList.remove('open');
+    }
+    function handlePhoneModalBg(e) {
+      if (e.target.id === 'phoneSettingsModal') {
+        closeNumberModal();
+      }
+    }
+    function saveNumberSetting() {
+      const v = document.getElementById('phoneSettingInput').value.trim();
+      if (setWhatsAppNum(v)) {
+        closeNumberModal();
+        renderMenuContent(activeCat, searchBox.value);
+      }
+    }
+
+    // ==========================================
+    // 9. EVENT LISTENERS
+    // ==========================================
+    let activeCat = "all";
+    const searchBox = document.getElementById('menuSearchInput');
+    const resetSearchBtn = document.getElementById('searchResetBtn');
+    const categoryButtons = document.querySelectorAll('.category-chip');
+
+    categoryButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoryButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCat = btn.dataset.cat;
+        renderMenuContent(activeCat, searchBox.value);
+      });
+    });
+
+    searchBox.addEventListener('input', (e) => {
+      const val = e.target.value;
+      resetSearchBtn.style.display = val ? 'block' : 'none';
+      renderMenuContent(activeCat, val);
+    });
+
+    resetSearchBtn.addEventListener('click', () => {
+      searchBox.value = '';
+      resetSearchBtn.style.display = 'none';
+      renderMenuContent(activeCat, '');
+      searchBox.focus();
+    });
+
+    // Initialize App
+    initDefaultVariants();
+    updateHeaderPhone();
+    renderMenuContent("all", "");
+    refreshCartBar();
+  </script>
+</body>
+</html>
